@@ -1,0 +1,220 @@
+@use "sass:math";
+
+@function fluid($min, $max, $minvw: 375px, $maxvw: 1440px) {
+  @return calc(
+    #{$min} + (#{math.div($max - $min, 1px)}) * ((100vw - #{$minvw}) /
+          (#{math.div($maxvw - $minvw, 1px)}))
+  );
+}
+
+@mixin flex-center-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$color-blue-very-dark: hsl(233, 47%, 7%);
+$color-blue-dark-saturated: hsl(244, 38%, 16%);
+$color-violet-soft: hsl(277, 64%, 61%);
+
+$color-white: hsl(0, 0%, 100%);
+$color-white-transparent1: hsla(0, 0%, 100%, 0.75);
+$color-white-transparent2: hsla(0, 0%, 100%, 0.6);
+
+$font-size: 15px;
+
+$font-family-inter: "Inter", sans-serif;
+$font-family-lexend: "Lexend Deca", sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: $font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: middle;
+  width: 100%;
+  object-fit: cover;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $color-blue-very-dark;
+  font-size: 1rem;
+  font-family: $font-family-lexend;
+  color: $color-white-transparent1;
+
+  @include flex-center-middle;
+  flex-direction: column;
+}
+
+.card {
+  background-color: $color-blue-dark-saturated;
+  margin: 0 16px;
+  border-radius: 0.5rem;
+  width: fluid(320px, 1100px);
+  overflow: hidden;
+
+  .img-box {
+    position: relative;
+    height: fluid(210px, 768px);
+    background: url(/images/image-header-mobile.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .img-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hsla(277, 100%, 61%, 0.4);
+  }
+
+  .card-body {
+    padding-top: fluid(40px, 68px);
+    padding-left: fluid(20px, 70px);
+    padding-right: fluid(20px, 70px);
+    padding-bottom: fluid(38px, 60px);
+
+    text-align: center;
+
+    .heading {
+      font-family: $font-family-inter;
+      font-weight: $font-weight-bold;
+      font-size: fluid(27px, 38px);
+      margin-bottom: fluid(20px, 30px);
+      color: $color-white;
+
+      .highlight {
+        color: $color-violet-soft;
+      }
+    }
+
+    .text {
+      line-height: 1.5;
+    }
+
+    .stats {
+      width: 100%;
+      margin-top: fluid(46px, 72px);
+      .stat {
+        margin-bottom: 34px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .figure {
+          font-family: $font-family-inter;
+          font-weight: $font-weight-bold;
+          font-size: 24px;
+          margin-bottom: 0.25em;
+          color: $color-white;
+        }
+
+        .heading {
+          text-transform: uppercase;
+          font-size: 1rem;
+          font-weight: $font-weight-normal;
+          color: $color-white-transparent2;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .card {
+    .card-body {
+      .stats {
+        display: flex;
+        justify-content: space-evenly;
+
+        .stat {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    display: flex;
+
+    .img-box {
+      flex: 1 0 50%;
+      order: 1;
+      height: 444px;
+      background-image: url(/images/image-header-desktop.jpg);
+      background-size: auto 100%;
+    }
+
+    .card-body {
+      flex: 1 50%;
+
+      margin-right: 12px;
+      text-align: left;
+
+      .stats {
+        justify-content: flex-start;
+
+        .stat {
+          margin-right: 54px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .card {
+    .img-box {
+      background-size: 100%;
+      height: auto;
+      align-self: stretch;
+    }
+    .card-body {
+      @include flex-center-middle();
+      flex-direction: column;
+    }
+  }
+}
+
+.attribution {
+  margin-top: 1rem;
+  font-size: 11px;
+  text-align: center;
+  color: $color-white-transparent2;
+}
+
+.attribution a {
+  color: $color-violet-soft;
+}
