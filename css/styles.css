@@ -120,6 +120,12 @@ body {
     margin-bottom: 0;
   }
 }
+@media (min-width: 768px) {
+  .md-padding {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
 @media (min-width: 992px) {
   .card {
     display: flex;
@@ -141,6 +147,10 @@ body {
   }
   .card .card-body .stats .stat {
     margin-right: 54px;
+  }
+  .card .md-padding {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 @media (min-width: 1440px) {
