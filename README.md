@@ -32,8 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/bague-rodnel/stats-preview-card-component)
-- Live Site URL: [Add live site URL here](https://bague-rodnel.github.io/stats-preview-card-component/)
+- Live Site URL: [Live](https://bague-rodnel.github.io/stats-preview-card-component/)
 
 ## My process
 
