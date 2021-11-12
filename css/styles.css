@@ -52,7 +52,7 @@ body {
 .card .img-box {
   position: relative;
   height: calc( 210px + (558) * ((100vw - 375px) / (1065)) );
-  background: url(/images/image-header-mobile.jpg);
+  background: url(images/image-header-mobile.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -134,7 +134,7 @@ body {
     flex: 1 0 50%;
     order: 1;
     height: 444px;
-    background-image: url(/images/image-header-desktop.jpg);
+    background-image: url(images/image-header-desktop.jpg);
     background-size: auto 100%;
   }
   .card .card-body {

@@ -23,17 +23,17 @@ Users should be able to:
 
 ### Screenshots
 
-![](./images/ss/375.jpg)
-![](./images/ss/576.jpg)
-![](./images/ss/768.jpg)
-![](./images/ss/992.jpg)
-![](./images/ss/1200.jpg)
-![](./images/ss/1440.jpg)
+![](./images/ss/375.JPG)
+![](./images/ss/576.JPG)
+![](./images/ss/768.JPG)
+![](./images/ss/992.JPG)
+![](./images/ss/1200.JPG)
+![](./images/ss/1440.JPG)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/bague-rodnel/stats-preview-card-component)
+- Live Site URL: [Add live site URL here](https://bague-rodnel.github.io/stats-preview-card-component/)
 
 ## My process
 
