@@ -64,7 +64,7 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(179, 56, 255, 0.4);
+  background-color: rgba(120, 26, 179, 0.5);
 }
 .card .card-body {
   padding-top: calc( 40px + (28) * ((100vw - 375px) / (1065)) );
